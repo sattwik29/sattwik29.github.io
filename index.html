@@ -3,68 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swayam Sattwik Parida | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Swayam | Digital Universe</title>
+    <meta name="description" content="Premium futuristic intro to Swayam's personal developer portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="intro.css">
 </head>
-
 <body>
+    <div class="intro-screen" id="introScreen">
+        <canvas id="particleCanvas" aria-hidden="true"></canvas>
+        <div class="vignette" aria-hidden="true"></div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">MYPORTFOLIO</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+        <header class="top-controls">
+            <button id="audioToggle" class="control-btn" type="button" aria-pressed="false">Ambient: Off</button>
+            <button id="skipBtn" class="control-btn" type="button">Skip Intro</button>
+        </header>
 
-    <!-- HOME SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>Hello, I'm <span>Swayam Sattwik Parida</span></h1>
-            <p>B.Tech CSE (AIML) Student | AI Enthusiast</p>
-            <a href="#contact" class="hero-btn">Connect With Me</a>
-        </div>
+        <main class="intro-content" id="parallaxLayer">
+            <p class="eyebrow">Personal Developer Portfolio</p>
+            <h1 class="intro-title">
+                <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
+            </h1>
+            <button id="enterBtn" class="enter-btn" type="button" disabled>
+                <span>Enter Experience</span>
+            </button>
+        </main>
+    </div>
 
-        <div class="hero-img">
-            <img src="swayam-profile.jpg" alt="Profile Photo">
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p>I’m Swayam Sattwik, an AIML student exploring the world of AI and machine learning. I enjoy building intelligent solutions and turning ideas into real projects.”</p>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="skills-section">
-        <h2>Skills</h2>
-
-        <div class="skills-container">
-            <div class="skill-card">C Programming</div>
-            <div class="skill-card">Java</div>
-            <div class="skill-card">Python</div>
-            <div class="skill-card">Machine Learning Basics</div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-        <h2>Contact</h2>
-
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/swayam-sattwik-parida-5a2a65329" target="_blank">LinkedIn</a>
-            <a href="https://instagram.com/sattwik_29" target="_blank">Instagram</a>
-        </div>
-    </section>
-
-    <footer>
-        ©️ 2025 Swayam Sattwik Parida | All Rights Reserved
-    </footer>
-
+    <script src="intro.js" defer></script>
 </body>
 </html>

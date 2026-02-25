@@ -41,6 +41,7 @@ function createParticles() {
         vx: (Math.random() - 0.5) * 0.15,
         vy: (Math.random() - 0.5) * 0.18,
         glow: Math.random() * 0.45 + 0.2,
+        hue: Math.random() > 0.45 ? "cyan" : "pink",
     }));
 }
 
@@ -57,8 +58,13 @@ function drawParticles() {
         if (p.y > window.innerHeight + 4) p.y = -4;
 
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 8);
-        gradient.addColorStop(0, `rgba(82, 232, 255, ${p.glow})`);
-        gradient.addColorStop(1, "rgba(82, 232, 255, 0)");
+        if (p.hue === "pink") {
+            gradient.addColorStop(0, `rgba(255, 111, 207, ${p.glow})`);
+            gradient.addColorStop(1, "rgba(255, 111, 207, 0)");
+        } else {
+            gradient.addColorStop(0, `rgba(105, 233, 255, ${p.glow})`);
+            gradient.addColorStop(1, "rgba(105, 233, 255, 0)");
+        }
 
         ctx.beginPath();
         ctx.fillStyle = gradient;
@@ -66,7 +72,7 @@ function drawParticles() {
         ctx.fill();
 
         ctx.beginPath();
-        ctx.fillStyle = "rgba(186, 216, 255, 0.8)";
+        ctx.fillStyle = p.hue === "pink" ? "rgba(255, 194, 235, 0.8)" : "rgba(198, 240, 255, 0.82)";
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
     }
